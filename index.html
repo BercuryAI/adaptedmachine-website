@@ -1143,6 +1143,18 @@
     }
 
     /* ─── RESPONSIVE ────────────────────────────────────── */
+    
+    /* Form validation feedback */
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+    }
+    .form-group input:valid:not(:placeholder-shown),
+    .form-group textarea:valid:not(:placeholder-shown) {
+      border-color: #22c55e;
+    }
+
     @media (max-width: 1024px) {
       .nav-links { display: none; }
     }
@@ -1244,6 +1256,7 @@
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#how-we-work">Our Values</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
     </ul>
     <a href="#cta-form" class="nav-cta">Get Started</a>
   </div>
@@ -1726,6 +1739,7 @@
         <textarea
           name="monthly_cost"
           placeholder="Estimate in hours, dollars, or describe the business impact..."
+          required
         ></textarea>
       </div>
 
@@ -1737,6 +1751,7 @@
         <textarea
           name="tried_before"
           placeholder="Tools, hires, consultants — what's worked, what hasn't..."
+          required
         ></textarea>
       </div>
 
@@ -1746,10 +1761,11 @@
           Best way to reach you
         </label>
         <input
-          type="text"
+          type="email"
           name="contact"
           placeholder="email@yourcompany.com or (555) 123-4567"
           required
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
         >
       </div>
 

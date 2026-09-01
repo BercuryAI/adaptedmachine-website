@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Tax Appeal Automation | Adapted Machine Case Study</title>
+  <meta name="description" content="How we built an end-to-end property tax appeal workflow system in under 2 weeks for a commercial property services firm. From intake to filing, fully automated.">
+  <link rel="canonical" href="https://adaptedmachine.com/case-studies/property-tax-appeals/" />
+  <meta property="og:title" content="Property Tax Appeal Automation | Adapted Machine" />
+  <meta property="og:description" content="Custom system automates intake, analysis, filing, and tracking for commercial property tax appeals." />
+  <meta property="og:url" content="https://adaptedmachine.com/case-studies/property-tax-appeals/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Property Tax Appeal Automation | Adapted Machine" />
+  <meta name="twitter:description" content="End-to-end workflow. Built in 2 weeks. 30+ appeals processed annually." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --navy: #0D0A14;
+      --teal: #00D9A3;
+      --white: #FFFFFF;
+      --g100: #F5F5F7;
+      --g300: #D1D1D6;
+      --g500: #86868B;
+      --g700: #424245;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--navy);
+      color: var(--g500);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--g300);
+      padding-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-size: 0.875rem;
+      color: var(--g500);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      color: var(--g500);
+      margin-bottom: 1.125rem;
+      line-height: 1.8;
+    }
+    .stat {
+      background: rgba(0, 217, 163, 0.08);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .stat-label {
+      color: var(--g500);
+      font-size: 0.9rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      color: var(--g500);
+    }
+    li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+    }
+    .cta {
+      background: var(--teal);
+      color: var(--navy);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .cta:hover {
+      opacity: 0.9;
+    }
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Property Tax Appeal Automation</h1>
+      <p class="subtitle">Commercial Property Services Firm</p>
+      <p class="meta">Build time: 10 days | Current volume: 30+ appeals/year | Status: running</p>
+    </header>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>A commercial property management and consulting firm helped clients appeal their property tax assessments. The process involved:</p>
+      <ul>
+        <li>Client intake (contact info, property details, assessment amount)</li>
+        <li>Property research (comparable sales, assessment methodology, jurisdiction rules)</li>
+        <li>Valuation analysis (calculate fair market value)</li>
+        <li>Document preparation (appeal filing requirements vary by jurisdiction)</li>
+        <li>Filing and deadline tracking (each county has different deadlines and forms)</li>
+        <li>Client communication and status updates</li>
+        <li>Hearing prep and evidence compilation</li>
+      </ul>
+      <p>Each appeal took 15–20 hours of manual work spread over weeks. The firm was managing 30+ appeals annually. Most of the work was document-gathering and tracking — not analysis.</p>
+    </section>
+
+    <section>
+      <h2>The Challenge</h2>
+      <p>Property tax appeals are jurisdiction-specific. There's no standard form, no single deadline, and no one right way to do it. The firm had learned through experience which steps mattered in Illinois, Indiana, and Michigan. But that knowledge was scattered across documents, emails, and people's heads.</p>
+      <p>And every appeal had edge cases. One property had been recently renovated; another was part of a complex. These affected valuation and filing strategy.</p>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>We built an end-to-end automation system that:</p>
+      <ul>
+        <li>Accepts client intake data via form or email</li>
+        <li>Extracts property details and assessment information</li>
+        <li>Identifies the correct jurisdiction and deadlines</li>
+        <li>Automatically pulls public records (comparable sales, prior assessments, property history)</li>
+        <li>Generates a preliminary valuation analysis</li>
+        <li>Creates the jurisdiction-specific filing documents (with required formats and signatures)</li>
+        <li>Tracks deadlines and sends reminders to staff and clients</li>
+        <li>Compiles evidence packets and hearing prep documents</li>
+        <li>Maintains a master database of all appeals and outcomes for future reference</li>
+      </ul>
+      <p style="margin-top: 1.5rem;"><strong>The architecture:</strong> Instead of trying to build one-size-fits-all workflow, we built it in layers. Core logic (intake, research, analysis) is shared. Jurisdiction-specific layers (filing requirements, deadlines, forms) branch out. Staff can override or add edge-case logic when needed, but 85% of appeals flow through automatically.</p>
+    </section>
+
+    <section>
+      <div class="stat">
+        <div class="stat-number">10 days</div>
+        <div class="stat-label">Build time (intake to production)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">85%</div>
+        <div class="stat-label">Of appeals fully automated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">15–20 hrs</div>
+        <div class="stat-label">Per appeal → 3–4 hrs per appeal</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How We Built It Fast</h2>
+      <h3>Speed Through Constraint</h3>
+      <p>We could have spent 6 weeks perfecting the system. Instead, we focused on the 80/20: what are the most common steps? Which 20% of edge cases account for 80% of complexity?</p>
+      <p>We scoped the initial build to handle straightforward residential and commercial properties in three jurisdictions. Special cases (environmental remediation, recent major construction) could be handled manually with a streamlined review process rather than full automation.</p>
+      
+      <h3>The Build</h3>
+      <p><strong>Days 1–2:</strong> Diagnosed the workflow. Mapped intake → research → filing → tracking. Identified three key decision points where staff needed to make judgment calls.</p>
+      <p><strong>Days 3–6:</strong> Built core intake and research modules. Integrated with county property records APIs and comparable sales databases.</p>
+      <p><strong>Days 7–9:</strong> Built filing document generation and deadline tracking.</p>
+      <p><strong>Day 10:</strong> Tested against 10 prior appeals. Refined. Deployed.</p>
+      
+      <h3>Post-Launch Learning</h3>
+      <p>Week 2–4: Staff used the system on real appeals. We monitored for edge cases and patterns. We found 3 scenarios we hadn't anticipated. We added handling for those. Now the system handles 85% without human intervention.</p>
+    </section>
+
+    <section>
+      <h2>The Business Impact</h2>
+      <p><strong>Capacity:</strong> The firm went from processing 30 appeals/year (at 15–20 hours each) to being able to handle 80+ appeals/year with the same staff. They're now expanding to new jurisdictions without adding headcount.</p>
+      <p><strong>Quality:</strong> No more missed deadlines. No more incomplete filings. The system enforces process consistency.</p>
+      <p><strong>Client experience:</strong> Clients get automated status updates. They know when their appeal was filed, when the hearing is scheduled, and what to expect.</p>
+      <p><strong>Institutional knowledge:</strong> The system now contains 3+ years of appeal history, outcomes by jurisdiction, and what works. New staff don't have to learn from scratch.</p>
+    </section>
+
+    <section>
+      <h2>About This Build</h2>
+      <p><strong>Scope:</strong> End-to-end workflow system with multiple integrations (property records, comparable sales databases, filing systems, deadline tracking).</p>
+      <p><strong>Timeline:</strong> Diagnosis (2 days) → Build (7 days) → Testing & Refinement (1 day) → Launch.</p>
+      <p><strong>Tools:</strong> Custom Python system. Integrations with county property records APIs, real estate data providers, and Google Workspace for document generation and client communication.</p>
+      <p><strong>Ongoing:</strong> We monitor the system weekly. When the firm encounters a new jurisdiction or situation, we add it to the system. They never go back to manual process.</p>
+      <p><strong>Cost basis:</strong> Workflow automation of this scope (multiple decision points, multiple integrations) typically runs $25–40K depending on jurisdictional complexity.</p>
+    </section>
+
+    <section>
+      <h2>Is Your Business Similar?</h2>
+      <p>If you have a multi-step process that's jurisdiction- or client-specific, but follows consistent logic underneath — case management, application processing, compliance workflows — custom automation can transform your capacity.</p>
+      <p>Adapted Machine specializes in cases where the workflow has variation but the core logic is sound. We build systems that let humans focus on judgment, not data entry.</p>
+      <a href="/" class="cta">Back to Home</a>
+    </section>
+
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--g300); font-size: 0.875rem; color: var(--g500);">
+      <p><strong>About Adapted Machine:</strong> We build custom AI automation systems for founder-led companies managing complex, multi-step operations. Speed matters — we deliver working systems in weeks, not quarters.</p>
+      <p><strong>Interested?</strong> <a href="mailto:jack@adaptedmachine.com">Email Jack directly</a> to discuss your situation. Free diagnostic included.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Reconciliation Automation | Adapted Machine Case Study</title>
+  <meta name="description" content="How we eliminated 8+ hours of weekly manual payment reconciliation for a regional consulting firm using custom AI automation. Real results: error-free processing, instant reporting.">
+  <link rel="canonical" href="https://adaptedmachine.com/case-studies/payment-reconciliation/" />
+  <meta property="og:title" content="Payment Reconciliation Automation | Adapted Machine" />
+  <meta property="og:description" content="Custom AI automation eliminated manual reconciliation overhead for a consulting firm." />
+  <meta property="og:url" content="https://adaptedmachine.com/case-studies/payment-reconciliation/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Payment Reconciliation Automation | Adapted Machine" />
+  <meta name="twitter:description" content="8+ hours of manual work eliminated. Error-free processing, instant reporting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --navy: #0D0A14;
+      --teal: #00D9A3;
+      --white: #FFFFFF;
+      --g100: #F5F5F7;
+      --g300: #D1D1D6;
+      --g500: #86868B;
+      --g700: #424245;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--navy);
+      color: var(--g500);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--g300);
+      padding-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-size: 0.875rem;
+      color: var(--g500);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      color: var(--g500);
+      margin-bottom: 1.125rem;
+      line-height: 1.8;
+    }
+    .stat {
+      background: rgba(0, 217, 163, 0.08);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .stat-label {
+      color: var(--g500);
+      font-size: 0.9rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      color: var(--g500);
+    }
+    li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+    }
+    .cta {
+      background: var(--teal);
+      color: var(--navy);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .cta:hover {
+      opacity: 0.9;
+    }
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Payment Reconciliation Automation</h1>
+      <p class="subtitle">Regional Consulting Firm</p>
+      <p class="meta">Build time: 5 days | Production: 2+ years | Current status: operating</p>
+    </header>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>A 15-person consulting firm processed client payments manually every two weeks. Reconciliation required 8+ hours of manual work: reviewing invoices, matching payments to jobs, flagging exceptions, generating reports.</p>
+      <p>The workflow involved multiple spreadsheets, email attachments, and manual status checks. One person owned the entire process. Any absence created bottlenecks.</p>
+      <h3>The Real Cost</h3>
+      <ul>
+        <li>8–10 hours every two weeks of billable staff time on non-billable work</li>
+        <li>Frequent errors requiring re-work and client correction requests</li>
+        <li>No visibility into payment status between reconciliation cycles</li>
+        <li>Process knowledge locked in one person's head</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>We built a custom system that:</p>
+      <ul>
+        <li>Automatically pulls invoice data from their accounting system</li>
+        <li>Matches payments to jobs and client accounts in real time</li>
+        <li>Flags exceptions (partial payments, late payments, mismatches) for manual review</li>
+        <li>Generates standardized reconciliation reports and sends them via email</li>
+        <li>Stores all data in a shared system so the firm has full visibility — no single person dependency</li>
+      </ul>
+      <p style="margin-top: 1.5rem;"><strong>Build approach:</strong> We mapped their actual workflow, including all edge cases (multiple invoices per job, credit adjustments, partial payments). Rather than forcing them into a template, we built a system that matches their process exactly. The system runs automatically on a scheduled cycle; staff reviews and approves — no data entry.</p>
+    </section>
+
+    <section>
+      <div class="stat">
+        <div class="stat-number">8 hrs/wk</div>
+        <div class="stat-label">Staff time recovered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Error reduction</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2+ yrs</div>
+        <div class="stat-label">Production uptime</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Process: How We Built It</h2>
+      <h3>Step 1: Diagnose</h3>
+      <p>We spent a day shadowing the existing workflow. We asked: What data comes in? What rules do you apply? What counts as an exception? Where do errors happen?</p>
+      
+      <h3>Step 2: Build</h3>
+      <p>We built a system that:</p>
+      <ul>
+        <li>Reads invoices from their accounting software via API</li>
+        <li>Applies their reconciliation rules (which we documented during diagnosis)</li>
+        <li>Stores results in a database accessible to the team</li>
+        <li>Sends weekly summaries to the finance team</li>
+      </ul>
+      <p>Total build time: 5 days. One pass. No re-work. Delivered working, tested, ready for production.</p>
+      
+      <h3>Step 3: Operate</h3>
+      <p>The system has been running for 2+ years with minimal intervention. We monitor it. When they change their accounting software or reporting needs, we update it. They never think about it — it just works.</p>
+    </section>
+
+    <section>
+      <h2>Why This Matters</h2>
+      <p>This is the kind of automation that compounds. The 8 hours recovered every two weeks isn't just a savings — it's hours freed up for actual client work, which is what generates revenue and grows the firm.</p>
+      <p>The system also created institutional knowledge. The reconciliation rules are now documented in the code. New team members don't have to learn the process by shadowing someone — they inherit a system that already knows.</p>
+      <p>And it eliminated a single-point-of-failure risk. Before: if the one person handling reconciliation was sick, the process stopped. Now: it runs automatically.</p>
+    </section>
+
+    <section>
+      <h2>About This Build</h2>
+      <p><strong>Timeline:</strong> Diagnosis (1 day) → Build (4 days) → Testing & Deployment (included).</p>
+      <p><strong>Tools:</strong> Custom Python system. Integrates with their existing accounting software. Runs on a scheduled automation platform.</p>
+      <p><strong>Maintenance:</strong> Minimal. We review logs monthly, handle any system updates, and adjust the system when their process changes.</p>
+      <p><strong>Cost basis:</strong> This type of build (single-process, well-defined inputs/outputs, moderate complexity) typically runs $15–35K depending on integration complexity and timeline compression.</p>
+    </section>
+
+    <section>
+      <h2>Is Your Business Similar?</h2>
+      <p>If you have a process like this — hours of manual work every week, multiple data sources, rules that only one person knows — you might be a good fit for custom automation.</p>
+      <p>Adapted Machine works with founder-led companies like yours. We don't sell software. We build systems that fit your exact workflow, not the other way around.</p>
+      <a href="/" class="cta">Back to Home</a>
+    </section>
+
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--g300); font-size: 0.875rem; color: var(--g500);">
+      <p><strong>About Adapted Machine:</strong> We build custom AI automation systems for founder-led companies that have outgrown off-the-shelf tools. Based in Chicago, working with clients across healthcare, professional services, construction, and commercial property.</p>
+      <p><strong>Interested?</strong> <a href="mailto:jack@adaptedmachine.com">Email Jack directly</a> to discuss your situation. Free diagnostic included.</p>
+    </footer>
+  </div>
+</body>
+</html>

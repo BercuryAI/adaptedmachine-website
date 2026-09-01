@@ -1,1 +1,6 @@
 .vercel
+
+# Internal agent tooling — must never be published to the public site
+agent-dashboard.html
+agent_status/
+jordan-tech-stack-overview.html

@@ -13,4 +13,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: *
+Allow: /llms.txt
+
 Sitemap: https://adaptedmachine.com/sitemap.xml

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timesheet Automation for Contractors | Adapted Machine Case Study</title>
+  <meta name="description" content="How we automated timesheet processing for a specialty electrical contractor managing multiple unions, job classifications, and pay structures. Zero manual data entry.">
+  <link rel="canonical" href="https://adaptedmachine.com/case-studies/timesheet-automation/" />
+  <meta property="og:title" content="Timesheet Automation for Contractors | Adapted Machine" />
+  <meta property="og:description" content="Custom automation handles complex union rules, multiple pay structures, and job classification without manual entry." />
+  <meta property="og:url" content="https://adaptedmachine.com/case-studies/timesheet-automation/" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Timesheet Automation for Contractors | Adapted Machine" />
+  <meta name="twitter:description" content="Zero manual data entry. Complex union rules automated." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --navy: #0D0A14;
+      --teal: #00D9A3;
+      --white: #FFFFFF;
+      --g100: #F5F5F7;
+      --g300: #D1D1D6;
+      --g500: #86868B;
+      --g700: #424245;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--navy);
+      color: var(--g500);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--g300);
+      padding-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .meta {
+      font-size: 0.875rem;
+      color: var(--g500);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    p {
+      color: var(--g500);
+      margin-bottom: 1.125rem;
+      line-height: 1.8;
+    }
+    .stat {
+      background: rgba(0, 217, 163, 0.08);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .stat-label {
+      color: var(--g500);
+      font-size: 0.9rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      color: var(--g500);
+    }
+    li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+    }
+    .cta {
+      background: var(--teal);
+      color: var(--navy);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .cta:hover {
+      opacity: 0.9;
+    }
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Timesheet Automation for Contractors</h1>
+      <p class="subtitle">Specialty Electrical Contractor</p>
+      <p class="meta">Build time: 8 days | Production: active | Complexity: high</p>
+    </header>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>A specialty electrical contractor employed 20+ union electricians across multiple job sites. Each week, timesheets had to be:</p>
+      <ul>
+        <li>Collected from field staff (sometimes via phone, sometimes on paper)</li>
+        <li>Reviewed for union rules compliance (different unions have different work hour rules, overtime thresholds, classifications)</li>
+        <li>Matched to job codes and customer accounts</li>
+        <li>Classified by apprentice/journeyman/foreman (different pay rates)</li>
+        <li>Calculated for overtime (complex: some unions use 8-hour daily; others use weekly thresholds)</li>
+        <li>Entered manually into payroll software</li>
+        <li>Verified for payroll accuracy</li>
+      </ul>
+      <p>This process took 15–20 hours every two weeks and required deep institutional knowledge about union rules, site assignments, and payroll logic.</p>
+    </section>
+
+    <section>
+      <h2>Why Off-the-Shelf Tools Failed</h2>
+      <p>Timesheet software exists (ADP, Guidepoint, etc.), but none of it handles the complexity here: multiple unions with different rules, job-site specific classifications, complex overtime calculations, and field collection methods. The contractor had tried three commercial solutions before reaching out to us. Each one required so much manual workaround that they went back to spreadsheets.</p>
+    </section>
+
+    <section>
+      <h2>The Solution</h2>
+      <p>We built a custom system that:</p>
+      <ul>
+        <li>Receives timesheet data from field staff (via phone, email, or field app)</li>
+        <li>Automatically applies the correct union rules for each electrician</li>
+        <li>Classifies hours by apprentice/journeyman/foreman based on job assignment and seniority</li>
+        <li>Calculates overtime using the union's specific rules (daily vs. weekly thresholds)</li>
+        <li>Flags exceptions (hours exceeding union limits, unclassified staff, missing job codes) for manual review</li>
+        <li>Exports clean data directly to payroll software</li>
+        <li>Stores historical data for auditing and future analysis</li>
+      </ul>
+      <p style="margin-top: 1.5rem;"><strong>The key innovation:</strong> We didn't build a template system. We built a rules engine that codified every union's specific logic. We consulted with the owner to document all the edge cases and exceptions. Then we built a system that handles 95% of cases automatically — and flags the remaining 5% for human review.</p>
+    </section>
+
+    <section>
+      <div class="stat">
+        <div class="stat-number">15–20 hrs</div>
+        <div class="stat-label">Weekly manual work eliminated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Compliance with union rules</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">4 unions</div>
+        <div class="stat-label">Different rule sets automated</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Build: Complex But Worth It</h2>
+      <h3>Why It Took Longer</h3>
+      <p>Timesheet automation is harder than it sounds. We spent 3 days in diagnosis: understanding union rules, learning how the contractor assigns jobs, documenting edge cases. We found 12+ scenarios that a template solution would have missed.</p>
+      <p>Build took 5 days. Testing and validation took another 3 (payroll errors are expensive, so we had to be thorough).</p>
+      
+      <h3>What We Built</h3>
+      <p>A system that:</p>
+      <ul>
+        <li>Reads incoming timesheet data from multiple sources</li>
+        <li>Looks up each electrician's current job assignment and classification</li>
+        <li>Applies the correct union rules for their jurisdiction</li>
+        <li>Calculates pay and overtime</li>
+        <li>Validates against constraints (union rules, job budgets, contractor policies)</li>
+        <li>Exports to QuickBooks and ADP Payroll</li>
+        <li>Sends the contractor a summary report and flags exceptions</li>
+      </ul>
+      
+      <h3>Ongoing Operation</h3>
+      <p>The system runs automatically every Friday evening. Staff reviews the report (now 30 minutes instead of 15–20 hours). The contractor verifies the numbers and submits to payroll. No manual data entry.</p>
+      <p>When union rules change or new staff joins, we update the system. The contractor never has to re-learn the manual process.</p>
+    </section>
+
+    <section>
+      <h2>The Real Impact</h2>
+      <p>Before: One person was responsible for timesheets. If they were sick, they had to work from home. The process was bottleneck risk.</p>
+      <p>After: Timesheets run automatically. The contractor spot-checks them. No single-person dependency. The knowledge is documented in the system.</p>
+      <p>Additionally: The historical data now gives the contractor insight into cost per job, labor efficiency trends, and overtime patterns. That intelligence is valuable for bidding and resource planning.</p>
+    </section>
+
+    <section>
+      <h2>About This Build</h2>
+      <p><strong>Complexity:</strong> High. This involved understanding union labor law, integrating with multiple payroll systems, and handling many edge cases.</p>
+      <p><strong>Timeline:</strong> Diagnosis (3 days) → Build (5 days) → Testing & Deployment (3 days).</p>
+      <p><strong>Tools:</strong> Custom rules engine in Python. Integrations with ADP Payroll, QuickBooks, and field collection systems.</p>
+      <p><strong>Cost basis:</strong> Complex automation like this typically runs $30–50K depending on the number of jurisdictions and integrations required.</p>
+      <p><strong>Why it succeeded:</strong> The contractor was deeply involved in the process. They knew their business and could explain the rules. We listened, documented, and built exactly what they needed — not what we thought they should do.</p>
+    </section>
+
+    <section>
+      <h2>Is Your Business Similar?</h2>
+      <p>If you manage timesheets, invoicing, or any other complex, multi-rule process that requires deep knowledge of your operations, you might be a good fit for custom automation.</p>
+      <p>Off-the-shelf tools are built for the average case. Your business isn't average — your rules are specific. Custom automation that fits your exact logic is often cheaper and faster than trying to squeeze into a template.</p>
+      <a href="/" class="cta">Back to Home</a>
+    </section>
+
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--g300); font-size: 0.875rem; color: var(--g500);">
+      <p><strong>About Adapted Machine:</strong> We build custom AI automation systems for founder-led companies managing complex operations. Specializing in cases where off-the-shelf tools don't fit.</p>
+      <p><strong>Interested?</strong> <a href="mailto:jack@adaptedmachine.com">Email Jack directly</a> to discuss your situation. Free diagnostic included.</p>
+    </footer>
+  </div>
+</body>
+</html>
